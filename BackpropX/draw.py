@@ -17,7 +17,6 @@ def trace(root : Value):
 
 def draw_dot(root : Value):
   dot = Digraph(format='svg', graph_attr={'rankdir': 'LR'}, filename=f'output/{root.label}graph') # LR = left to right
-  
   nodes, edges = trace(root)
   for n in nodes:
     uid = str(id(n))

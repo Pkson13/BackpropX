@@ -1,3 +1,4 @@
+import math
 class Value:
     """ stores a single scalar value and its gradient """
 
@@ -27,6 +28,19 @@ class Value:
             self.grad = other.data * out.grad
             other.grad = self.data * out.grad
         out._backward = _backward
+        return out
+    
+    def tanh(self):
+        x = self.data
+        t = (math.exp(2*x) - 1)/(math.exp(2*x) + 1)
+        print("\nt", t)
+        out = Value(t, (self, ), 'tanh')
+        
+        def _backward():
+            self.grad += (1 - t**2) * out.grad
+        
+        out._backward = _backward
+        
         return out
     
     def backward(self):
