@@ -16,13 +16,13 @@ def trace(root : Value):
   return nodes, edges
 
 def draw_dot(root : Value):
-  dot = Digraph(format='svg', graph_attr={'rankdir': 'LR'}, filename=f'/output/{root.label}graph') # LR = left to right
+  dot = Digraph(format='svg', graph_attr={'rankdir': 'LR'}, filename=f'output/{root.label}graph') # LR = left to right
   
   nodes, edges = trace(root)
   for n in nodes:
     uid = str(id(n))
     # for any value in the graph, create a rectangular ('record') node for it
-    dot.node(name = uid, label = "{ %s | data %.4f  }" % (n.label, n.data,), shape='record')
+    dot.node(name = uid, label = "{ %s | data %.4f | grad %.4f  }" % (n.label, n.data,n.grad), shape='record')
     if n._op:
       # if this value is a result of some operation, create an op node for it
       dot.node(name = uid + n._op, label = n._op)
@@ -33,7 +33,7 @@ def draw_dot(root : Value):
     # connect n1 to the op node of n2
     dot.edge(str(id(n1)), str(id(n2)) + n2._op)
 
-  dot.render(view=True,)
+  dot.render(view=True)
 
   return dot
 
