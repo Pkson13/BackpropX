@@ -19,6 +19,15 @@ class Value:
         out._backward = _backward
         
         return out
+    def __mul__(self, other):
+        other = other if isinstance(other, Value) else Value(other)
+        out  = Value(self.data * other.data, (self, other), "*", )
+        def _backward():
+            #chain-rule
+            self.grad = other.data * out.grad
+            other.grad = self.data * out.grad
+        out._backward = _backward
+        return out
     
     def backward(self):
         topo: list[Value] = []
