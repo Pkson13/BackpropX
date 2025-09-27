@@ -33,7 +33,7 @@ class Value:
     def tanh(self):
         x = self.data
         t = (math.exp(2*x) - 1)/(math.exp(2*x) + 1)
-        print("\nt", t)
+        # print("\nt", t)
         out = Value(t, (self, ), 'tanh')
         
         def _backward():
@@ -56,8 +56,8 @@ class Value:
                 
         build_topo(self)
         self.grad = 1
-        print(topo)
-        print("reverse")
+        # print(topo)
+        # print("reverse")
         # for i in range(len(topo)-1,-1, -1):
         #     print(topo[i])
         for node in reversed(topo):
