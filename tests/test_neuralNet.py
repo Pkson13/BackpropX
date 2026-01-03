@@ -7,7 +7,7 @@ from BackpropX.draw import draw_dot
 nn = MLP(3, [4,4,1])
 x = [2.0, 3.0, -1.0]
 
-res = nn(x)
-print(res)
-res.backward()
-draw_dot(res)
+# res = nn(x)
+#  print(res)
+# res.backward()
+# draw_dot(res)

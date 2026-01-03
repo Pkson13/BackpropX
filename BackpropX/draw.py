@@ -1,5 +1,5 @@
 from graphviz import Digraph
-from BackpropX.engine import Value
+from .engine import Value
 
 from graphviz import Digraph
 

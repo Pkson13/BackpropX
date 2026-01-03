@@ -1,4 +1,6 @@
-from BackpropX.engine import Value
+import sys
+print(sys.path)
+from .engine import Value
 import random
 class Neuron:
   
@@ -27,17 +29,28 @@ class Layer:
   def parameters(self):
     return [p for neuron in self.neurons for p in neuron.parameters()]
 
-class MLP:
+class MLP():
   
   def __init__(self, nin: int, nouts: list[int]):
+    super().__init__()
     sz = [nin] + nouts
     print("\nsz", sz)
     self.layers = [Layer(sz[i], sz[i+1]) for i in range(len(nouts))]
+
+  # def __init__(self,nin: int, nouts: list[int], renderer: CairoRenderer | OpenGLRenderer | None = None, camera_class: type[Camera] = Camera, always_update_mobjects: bool = False, random_seed: int | None = None, skip_animations: bool = False) -> None:
+  #   super().__init__(renderer, camera_class, always_update_mobjects, random_seed, skip_animations)
+  #   sz = [nin] + nouts
+  #   self.layers = [Layer(i, i+1) for i in range(len(nouts))]
   
-  def __call__(self, x)-> Value:
+  def __call__(self, x):
     for layer in self.layers:
       x = layer(x)
     return x
   
   def parameters(self):
     return [p for layer in self.layers for p in layer.parameters()]
+  
+  # def construct(self) -> None:
+  #   for layer in self.layers:
+  #     rect = Rectangle()
+  #     self.add(rect)
