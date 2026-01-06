@@ -36,7 +36,7 @@ class MLPscene(Scene):
             neuron2.get_left(), 
             stroke_width=1, 
             color=GRAY,
-            stroke_opacity=0.5
+            stroke_opacity=0.8
           )
           lines.add(line)
     
@@ -47,6 +47,6 @@ class MLPscene(Scene):
     full_network.move_to(ORIGIN)
     full_network.scale_to_fit_height(config.frame_height - 1)
     self.play(FadeIn(group))
-    self.play(Create(lines, lag_ratio=0.1, run_time=3))
+    self.play(Create(lines, lag_ratio=0.1, run_time=1.5))
     
   

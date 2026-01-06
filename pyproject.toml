@@ -5,6 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "BackpropX"
 version = "0.1.0"
+authors = [
+    {name = "Peterson kinyanjui", email = "kinyanjuipeterson12787@gmail.com"},
+]
+dependencies = ["manim", "graphviz"]
+description = "An scalar-valued autograd engine with neural network visualizations"
+
 
 [tool.setuptools.packages.find]
 include = ["BackpropX*"]  # Only include the actual package
