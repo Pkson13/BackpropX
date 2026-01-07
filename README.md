@@ -26,8 +26,6 @@ source env/bin/activate  # On Windows: env\Scripts\activate
 # Install the package
 pip install .
 
-# Install dependencies for visualization
-pip install -r requirements.txt
 ```
 
 ## Quick Start
