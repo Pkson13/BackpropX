@@ -54,6 +54,8 @@ https://github.com/user-attachments/assets/ef911eb2-9cd3-40c9-9e1f-b1e7c5e6a477
 3. Copy the generated URL and replace the placeholder above
 4. Delete the issue -->
 
+<video src="media/videos/720p30/MLPscene.mp4" controls width="600"></video>
+
 ### Using the Autograd Engine
 
 ```python
