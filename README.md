@@ -30,6 +30,24 @@ pip install .
 
 ## Quick Start
 
+### Visualizing Neural Network Architecture
+
+The quickest way to see BackPropX in action is to run the neural network visualization:
+
+```bash
+python BackpropX/visualize_nn.py --nin 3 --nouts 3 3 4 3 --quality medium_quality
+```
+
+**Arguments:**
+
+- `--nin` — Number of input neurons
+- `--nouts` — List of neurons per layer (e.g., `3 3 4 3` creates 4 layers)
+- `--quality` — Rendering quality: `low_quality`, `medium_quality`, `high_quality`, or `fourk_quality`
+
+**Example Output:**
+
+<video src="media/videos/720p30/MLPscene.mp4" controls width="600"></video>
+
 ### Using the Autograd Engine
 
 ```python
@@ -87,24 +105,9 @@ draw_dot(c)
 
 ### Visualizing Neural Network Architecture
 
-```bash
-# Run the Manim visualization
-manim BackpropX/visualize_nn.py MLPscene -pql
-```
+See the [Quick Start](#quick-start) section above for full details on running the visualization.
 
-**Flags:**
-
-- `-p` — Preview (auto-open after rendering)
-- `-q l` — Low quality (fast), use `-qm` for medium or `-qh` for high
-- `-ql` — Shorthand for low quality + preview
-
-Edit `visualize_nn.py` to customize the network architecture:
-
-```python
-nn = MLP(3, [4, 4, 1])  # 3 inputs → 4 → 4 → 1 output
-```
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 BackPropX_autograd/
@@ -175,6 +178,6 @@ for epoch in range(100):
         print(f"Epoch {epoch}, Loss: {loss.data:.4f}")
 ```
 
-## 📄 License
+## License
 
 MIT License - feel free to use this for learning and experimentation!
