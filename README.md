@@ -46,7 +46,13 @@ python BackpropX/visualize_nn.py --nin 3 --nouts 3 3 4 3 --quality medium_qualit
 
 **Example Output:**
 
-<video src="media/videos/720p30/MLPscene.mp4" controls width="600"></video>
+https://github.com/user-attachments/assets/ef911eb2-9cd3-40c9-9e1f-b1e7c5e6a477
+
+<!-- To add your video:
+1. Open a GitHub issue in your repo
+2. Drag & drop media/videos/720p30/MLPscene.mp4 into the issue
+3. Copy the generated URL and replace the placeholder above
+4. Delete the issue -->
 
 ### Using the Autograd Engine
 
